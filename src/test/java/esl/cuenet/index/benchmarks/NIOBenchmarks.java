@@ -10,6 +10,7 @@ import java.nio.ByteBuffer;
 import java.nio.DoubleBuffer;
 import java.nio.LongBuffer;
 import java.nio.channels.FileChannel;
+import java.nio.file.Files;
 import java.util.Random;
 
 public class NIOBenchmarks {
@@ -22,9 +23,9 @@ public class NIOBenchmarks {
 
     @Test
     public void writeBytes() throws Exception {
-        File temp1 = File.createTempFile("byteArrayWriteTest1", null);
-        File temp2 = File.createTempFile("byteArrayWriteTest2", null);
-        File temp3 = File.createTempFile("byteArrayWriteTest3", null);
+        File temp1 = Files.createTempFile("byteArrayWriteTest1", null).toFile();
+        File temp2 = Files.createTempFile("byteArrayWriteTest2", null).toFile();
+        File temp3 = Files.createTempFile("byteArrayWriteTest3", null).toFile();
 
         logger.info(temp1.getAbsolutePath());
 
@@ -87,9 +88,9 @@ public class NIOBenchmarks {
     @Test
     public void writeByteBuffers() throws Exception {
 
-        File temp1 = File.createTempFile("ByteBuffersWriteTest1", null);
-        File temp2 = File.createTempFile("ByteBuffersWriteTest2", null);
-        File temp3 = File.createTempFile("ByteBuffersWriteTest3", null);
+        File temp1 = Files.createTempFile("ByteBuffersWriteTest1", null).toFile();
+        File temp2 = Files.createTempFile("ByteBuffersWriteTest2", null).toFile();
+        File temp3 = Files.createTempFile("ByteBuffersWriteTest3", null).toFile();
 
         logger.info(temp1.getAbsolutePath());
 
